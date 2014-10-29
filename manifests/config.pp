@@ -132,11 +132,6 @@ $unixauthentication = undef,
     'UnixAuthentication',
     'PAMAuthentication',
     ]
-file { $pureftpd::params::conf_path:
-  ensure  => file,
-  content => template("${module_name}/${pureftpd::params::conf_erb}"),
-  owner   => 'root',
-  group   => 'root',
-  mode    =>  '0644',
-  }
+
+    pure-ftpd::config::item { $conf_options: }
 }

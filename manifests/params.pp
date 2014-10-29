@@ -45,6 +45,7 @@ class pureftpd::params {
 
       $conf_erb        = 'pure-ftpd.conf.erb'
       $conf_path       = "${config_dir}/pure-ftpd.conf"
+      $conf_dir        = "${config_dir}/conf/"
 
       $ldap_conf_erb   = 'pure-ftpd.conf.erb'
       $ldap_conf_path  = "${config_dir}/db/ldap.conf"

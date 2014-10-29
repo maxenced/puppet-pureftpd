@@ -1,6 +1,4 @@
 <% vars = scope.to_hash -%>
-<% @conf_options.each do |option| -%>
-<%  if vars.has_key?(option.downcase) -%>
-<%=     "%-19s %s" % [option, vars[option.downcase]] %>
-<%  end -%>
+<%  if vars.has_key?(@title.downcase) -%>
+<%=     "%-19s %s" % [@title, vars[@title.downcase]] %>
 <% end -%>
