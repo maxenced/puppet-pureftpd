@@ -7,7 +7,7 @@
 # Maxence Dunnewind <tech@typhon.com>
 #
 define pureftpd::config::item (){
-  if inline_template('<%= scope.lookupvar("::pureftpd::safe_config")[@title.downcase] %>') != 'undef' {
+  if inline_template('<%= scope.lookupvar("::pureftpd::safe_config").has_key?(@title.downcase) %>') {
     notice inline_template('<%= scope.lookupvar("::pureftpd::safe_config")[@title.downcase] %>')
     file { "${pureftpd::params::conf_dir}/${title}":
       ensure  => file,
