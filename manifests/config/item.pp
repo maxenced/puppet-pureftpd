@@ -8,7 +8,7 @@
 #
 define pureftpd::config::item (){
   if inline_template('<%= scope.lookupvar(@title.downcase) %>') != 'undef' {
-    file { "${pureftpd::params::conf_path}/${title}":
+    file { "${pureftpd::params::conf_dir}/${title}":
       ensure  => file,
       content => template("${module_name}/${pureftpd::params::conf_erb}"),
       owner   => 'root',
