@@ -133,5 +133,5 @@ $unixauthentication = undef,
     'PAMAuthentication',
     ]
 
-    pure-ftpd::config::item { $conf_options: }
+    pureftpd::config::item { $conf_options: }
 }
