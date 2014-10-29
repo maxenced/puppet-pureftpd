@@ -1,4 +1,4 @@
 <% vars = scope.to_hash -%>
 <%  if vars.has_key?(@title.downcase) -%>
-<%=     "%-19s %s" % [@title, vars[@title.downcase]] %>
+<%= "%s" % [vars[@title.downcase]] %>
 <% end -%>
