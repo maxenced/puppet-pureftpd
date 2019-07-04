@@ -8,7 +8,6 @@
 #
 define pureftpd::config::item (){
   if has_key($::pureftpd::safe_config, downcase($title)) {
-    notice inline_template('<%= scope.lookupvar("::pureftpd::safe_config")[@title.downcase] %>')
     file { "${pureftpd::params::conf_dir}/${title}":
       ensure  => file,
       content => template("${module_name}/${pureftpd::params::conf_erb}"),
